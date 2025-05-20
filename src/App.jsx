@@ -1,9 +1,11 @@
-import "./index.css";
 import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar"; // Import React-Calendar
+// import "react-calendar/dist/Calendar.css"; // Import default styles
 import Navbar from "./components/Navbar";
 import WateringList from "./components/WateringList";
 import Wishlist from "./components/Wishlist";
 import AddPlantForm from "./components/AddPlantForm";
+import "./index.css";
 
 export default function App() {
   // Read once from localStorage at initial render
@@ -64,11 +66,38 @@ export default function App() {
     );
   };
 
+  // Calculate dates when plants need watering
+  const getWateringDates = () => {
+    const dates = [];
+    plants.forEach((plant) => {
+      const lastWatered = new Date(plant.lastWatered);
+      const nextWaterDate = new Date(lastWatered);
+      nextWaterDate.setDate(lastWatered.getDate() + plant.wateringFrequency);
+      dates.push(nextWaterDate.toISOString().slice(0, 10)); // Format as YYYY-MM-DD
+    });
+    return dates;
+  };
+
+  const wateringDates = getWateringDates();
+
+  // Highlight watering dates on the calendar
+  const tileClassName = ({ date, view }) => {
+    if (view === "month") {
+      // Format the date to YYYY-MM-DD for comparison
+      const dateString = date.toISOString().slice(0, 10);
+      if (wateringDates.includes(dateString)) {
+        return "highlight"; // Use a custom class for highlighting
+      }
+    }
+    return null;
+  };
+
   return (
     <div className="min-h-screen bg-green-50 flex items-center justify-center">
-      <div className="w-3/4 bg-white p-4 rounded shadow">
+      <div className="w-1/2 bg-white p-4 rounded shadow">
         <Navbar />
         <AddPlantForm onAdd={addPlant} />
+
         <WateringList
           plants={plants}
           onWater={markWatered}
@@ -80,6 +109,11 @@ export default function App() {
           onAdd={addToWishlist}
           onRemove={removeFromWishlist}
           onEdit={editWishlistItem}
+        />
+
+        <Calendar
+          className="mt-4 w-full h-full bg-white shadow p-4 rounded"
+          tileClassName={tileClassName} // Apply custom styles to tiles
         />
       </div>
     </div>
