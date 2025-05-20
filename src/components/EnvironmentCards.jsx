@@ -54,15 +54,15 @@ export default function EnvironmentCards() {
   return (
     <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Light</h3>
+        <h3 className="text-lg font-semibold">Light ☀️</h3>
         <p>{weatherData.light}</p>
       </div>
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Temperature</h3>
+        <h3 className="text-lg font-semibold">Temperature 🌡️</h3>
         <p>{weatherData.temperature}°F</p>
       </div>
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Humidity</h3>
+        <h3 className="text-lg font-semibold">Humidity 💧</h3>
         <p>{weatherData.humidity}%</p>
       </div>
     </div>

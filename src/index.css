@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 .react-calendar__tile.highlight {
-  background-color: #a3e635; /* Light green background */
-  color: white; /* White text */
+  background-color: #a3e635;
+  color: white;
   border-radius: 20px;
 }
 
@@ -15,14 +15,14 @@
 }
 
 .react-calendar__navigation__arrow {
-  flex-grow: 1; /* Allow the arrow buttons to grow and take up more space */
-  flex-basis: 0; /* Ensure equal distribution of space */
-  text-align: center; /* Center the arrow icons */
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
 }
 
 .react-calendar__navigation__label {
-  flex-grow: 2; /* Allow the label to take up more space compared to arrows */
-  text-align: center; /* Center the label text */
+  flex-grow: 2;
+  text-align: center;
 }
 
 .react-calendar__navigation__arrow .react-calendar__navigation__prev2-button {
