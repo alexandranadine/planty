@@ -95,28 +95,33 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-green-50 flex items-center justify-center">
-      <div className="w-1/2 bg-white p-4 rounded shadow">
-        <Navbar />
-        <AddPlantForm onAdd={addPlant} />
+      <div className="w-3/4 bg-white p-4 rounded shadow flex gap-4">
+        {/* Left Column: AddPlantForm and Wishlist */}
+        <div className="w-1/3 flex flex-col">
+          <AddPlantForm onAdd={addPlant} />
+          <Wishlist
+            list={wishlist}
+            onAdd={addToWishlist}
+            onRemove={removeFromWishlist}
+            onEdit={editWishlistItem}
+          />
+        </div>
 
-        <WateringList
-          plants={plants}
-          onWater={markWatered}
-          onEdit={editPlant}
-          onDelete={deletePlant}
-        />
-        <Wishlist
-          list={wishlist}
-          onAdd={addToWishlist}
-          onRemove={removeFromWishlist}
-          onEdit={editWishlistItem}
-        />
-
-        <Calendar
-          className="mt-4 w-full h-full bg-white shadow p-4 rounded"
-          tileClassName={tileClassName} // Apply custom styles to tiles
-        />
-        <EnvironmentCards />
+        {/* Right Column: Other Components */}
+        <div className="flex-1">
+          <Navbar />
+          <WateringList
+            plants={plants}
+            onWater={markWatered}
+            onEdit={editPlant}
+            onDelete={deletePlant}
+          />
+          <Calendar
+            className="mt-4 w-full bg-white shadow p-4 rounded"
+            tileClassName={tileClassName} // Apply custom styles to tiles
+          />
+          <EnvironmentCards />
+        </div>
       </div>
     </div>
   );

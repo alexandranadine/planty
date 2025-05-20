@@ -29,7 +29,7 @@ export default function AddPlantForm({ onAdd }) {
       <h2 className="text-lg font-semibold mb-2">Add a Plant</h2>
       <div className="flex flex-col gap-2">
         <input
-          className="border p-2 rounded"
+          className="border p-1 rounded"
           type="text"
           placeholder="Plant name"
           value={name}
@@ -37,14 +37,14 @@ export default function AddPlantForm({ onAdd }) {
           required
         />
         <input
-          className="border p-2 rounded"
+          className="border p-1 rounded"
           type="url"
           placeholder="Image URL (optional)"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
         <textarea
-          className="border p-2 rounded"
+          className="border p-1 rounded"
           placeholder="Notes (optional)"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
@@ -52,7 +52,7 @@ export default function AddPlantForm({ onAdd }) {
         <div className="flex items-center gap-2">
           <span>I want to water this plant every</span>
           <input
-            className="border p-2 rounded w-16 text-center"
+            className="border p-1 rounded w-16 text-center"
             type="number"
             min="1"
             value={frequency}

@@ -24,7 +24,7 @@ export default function Wishlist({ list, onAdd, onRemove, onEdit }) {
   };
 
   return (
-    <div className="bg-white shadow p-4 rounded">
+    <div className="bg-white shadow p-4 rounded ">
       <h2 className="text-lg font-semibold mb-2">🌱 Plant Wishlist</h2>
       <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
         <input
