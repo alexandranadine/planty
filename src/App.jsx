@@ -48,16 +48,40 @@ export default function App() {
     setWishlist((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const editPlant = (updatedPlant) => {
+    setPlants((prev) =>
+      prev.map((p) => (p.id === updatedPlant.id ? updatedPlant : p))
+    );
+  };
+
+  const deletePlant = (id) => {
+    setPlants((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  const editWishlistItem = (updatedItem) => {
+    setWishlist((prev) =>
+      prev.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+    );
+  };
+
   return (
-    <div className="min-h-screen bg-green-50 p-4">
-      <Navbar />
-      <AddPlantForm onAdd={addPlant} />
-      <WateringList plants={plants} onWater={markWatered} />
-      <Wishlist
-        list={wishlist}
-        onAdd={addToWishlist}
-        onRemove={removeFromWishlist}
-      />
+    <div className="min-h-screen bg-green-50 flex items-center justify-center">
+      <div className="w-3/4 bg-white p-4 rounded shadow">
+        <Navbar />
+        <AddPlantForm onAdd={addPlant} />
+        <WateringList
+          plants={plants}
+          onWater={markWatered}
+          onEdit={editPlant}
+          onDelete={deletePlant}
+        />
+        <Wishlist
+          list={wishlist}
+          onAdd={addToWishlist}
+          onRemove={removeFromWishlist}
+          onEdit={editWishlistItem}
+        />
+      </div>
     </div>
   );
 }

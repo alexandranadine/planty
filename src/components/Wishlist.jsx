@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Wishlist({ list, onAdd, onRemove }) {
+export default function Wishlist({ list, onAdd, onRemove, onEdit }) {
   const [name, setName] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [editValue, setEditValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd({ id: uuidv4(), name });
     setName("");
+  };
+
+  const startEditing = (item) => {
+    setEditingId(item.id);
+    setEditValue(item.name);
+  };
+
+  const saveEdit = (item) => {
+    onEdit({ ...item, name: editValue });
+    setEditingId(null);
   };
 
   return (
@@ -32,13 +44,45 @@ export default function Wishlist({ list, onAdd, onRemove }) {
       <ul className="list-disc list-inside">
         {list.map((item) => (
           <li key={item.id} className="flex justify-between items-center py-1">
-            {item.name}
-            <button
-              className="bg-red-500 text-white px-2 py-1 rounded"
-              onClick={() => onRemove(item.id)}
-            >
-              Remove
-            </button>
+            {editingId === item.id ? (
+              <div className="flex gap-2 w-full">
+                <input
+                  className="border p-1 rounded flex-1"
+                  value={editValue}
+                  onChange={(e) => setEditValue(e.target.value)}
+                />
+                <button
+                  className="bg-blue-500 text-white px-2 py-1 rounded"
+                  onClick={() => saveEdit(item)}
+                >
+                  Save
+                </button>
+                <button
+                  className="bg-gray-400 text-white px-2 py-1 rounded"
+                  onClick={() => setEditingId(null)}
+                >
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              <>
+                <span>{item.name}</span>
+                <div className="flex gap-2">
+                  <button
+                    className="bg-yellow-500 text-white px-2 py-1 rounded"
+                    onClick={() => startEditing(item)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                    onClick={() => onRemove(item.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </>
+            )}
           </li>
         ))}
       </ul>
