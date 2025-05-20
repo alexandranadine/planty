@@ -17,7 +17,7 @@ export default function EnvironmentCards() {
       }
       const data = await response.json();
       setWeatherData({
-        temperature: data.current.temp_c,
+        temperature: data.current.temp_f,
         humidity: data.current.humidity,
         light: data.current.condition.text,
       });
@@ -59,7 +59,7 @@ export default function EnvironmentCards() {
       </div>
       <div className="bg-white shadow p-4 rounded">
         <h3 className="text-lg font-semibold">Temperature</h3>
-        <p>{weatherData.temperature}°C</p>
+        <p>{weatherData.temperature}°F</p>
       </div>
       <div className="bg-white shadow p-4 rounded">
         <h3 className="text-lg font-semibold">Humidity</h3>
