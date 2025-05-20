@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import WateringList from "./components/WateringList";
 import Wishlist from "./components/Wishlist";
 import AddPlantForm from "./components/AddPlantForm";
+import EnvironmentCards from "./components/EnvironmentCards";
 import "./index.css";
 
 export default function App() {
@@ -115,6 +116,7 @@ export default function App() {
           className="mt-4 w-full h-full bg-white shadow p-4 rounded"
           tileClassName={tileClassName} // Apply custom styles to tiles
         />
+        <EnvironmentCards />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { PencilIcon, TrashIcon, CheckIcon } from "@heroicons/react/16/solid";
 
 export default function Wishlist({ list, onAdd, onRemove, onEdit }) {
   const [name, setName] = useState("");
@@ -72,13 +73,13 @@ export default function Wishlist({ list, onAdd, onRemove, onEdit }) {
                     className="bg-yellow-500 text-white px-2 py-1 rounded"
                     onClick={() => startEditing(item)}
                   >
-                    Edit
+                    <PencilIcon className="w-5 h-5" />
                   </button>
                   <button
                     className="bg-red-500 text-white px-2 py-1 rounded"
                     onClick={() => onRemove(item.id)}
                   >
-                    Remove
+                    <TrashIcon className="w-5 h-5" />
                   </button>
                 </div>
               </>

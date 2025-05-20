@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PencilIcon, TrashIcon, CheckIcon } from "@heroicons/react/16/solid";
 
 export default function WateringList({ plants, onWater, onEdit, onDelete }) {
   const today = new Date();
@@ -106,20 +107,20 @@ export default function WateringList({ plants, onWater, onEdit, onDelete }) {
                               className="bg-green-500 text-white px-2 py-1 rounded"
                               onClick={() => onWater(plant.id)}
                             >
-                              Mark Watered
+                              <CheckIcon className="w-5 h-5" />
                             </button>
                           )}
                           <button
                             className="bg-yellow-500 text-white px-2 py-1 rounded"
                             onClick={() => startEditing(plant)}
                           >
-                            Edit
+                            <PencilIcon className="w-5 h-5" />
                           </button>
                           <button
                             className="bg-red-500 text-white px-2 py-1 rounded"
                             onClick={() => onDelete(plant.id)}
                           >
-                            Delete
+                            <TrashIcon className="w-5 h-5" />
                           </button>
                         </div>
                       </div>
