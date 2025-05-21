@@ -17,4 +17,4 @@
 
 ## Screenshot
 
-![Planty Screenshot](./assets/ss.png)
+![Planty Screenshot](ss.png)
