@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar"; // Import React-Calendar
 // import "react-calendar/dist/Calendar.css"; // Import default styles
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import WateringList from "./components/WateringList";
 import Wishlist from "./components/Wishlist";
 import AddPlantForm from "./components/AddPlantForm";
@@ -95,32 +95,36 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-green-50 flex items-center justify-center">
-      <div className="w-3/4 bg-white p-4 rounded shadow flex gap-4">
-        {/* Left Column: AddPlantForm and Wishlist */}
-        <div className="w-1/3 flex flex-col">
-          <AddPlantForm onAdd={addPlant} />
-          <Wishlist
-            list={wishlist}
-            onAdd={addToWishlist}
-            onRemove={removeFromWishlist}
-            onEdit={editWishlistItem}
-          />
-        </div>
+      <div className="w-3/4 bg-white rounded shadow border">
+        {/* Header: Full Width */}
+        <Header />
 
-        {/* Right Column: Other Components */}
-        <div className="flex-1">
-          <Navbar />
-          <WateringList
-            plants={plants}
-            onWater={markWatered}
-            onEdit={editPlant}
-            onDelete={deletePlant}
-          />
-          <Calendar
-            className="mt-4 w-full bg-white shadow p-4 rounded"
-            tileClassName={tileClassName} // Apply custom styles to tiles
-          />
-          <EnvironmentCards />
+        <div className="flex gap-4 p-4">
+          {/* Left Column: AddPlantForm and Wishlist */}
+          <div className="w-1/3 flex flex-col">
+            <AddPlantForm onAdd={addPlant} />
+            <Wishlist
+              list={wishlist}
+              onAdd={addToWishlist}
+              onRemove={removeFromWishlist}
+              onEdit={editWishlistItem}
+            />
+          </div>
+
+          {/* Right Column: Other Components */}
+          <div className="flex-1">
+            <WateringList
+              plants={plants}
+              onWater={markWatered}
+              onEdit={editPlant}
+              onDelete={deletePlant}
+            />
+            <Calendar
+              className="mt-4 w-full bg-white shadow p-4 rounded"
+              tileClassName={tileClassName} // Apply custom styles to tiles
+            />
+            <EnvironmentCards />
+          </div>
         </div>
       </div>
     </div>
