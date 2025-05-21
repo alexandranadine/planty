@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 
 export default function EnvironmentCards() {
   const [weatherData, setWeatherData] = useState(null);
@@ -54,15 +58,28 @@ export default function EnvironmentCards() {
   return (
     <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Light ☀️</h3>
+        <h3 className="text-lg font-semibold">
+          <span>
+            Light <FontAwesomeIcon icon={faSun} />
+          </span>
+        </h3>
         <p>{weatherData.light}</p>
       </div>
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Temperature 🌡️</h3>
+        <h3 className="text-lg font-semibold">
+          <span>
+            Temp <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
+          </span>
+        </h3>
         <p>{weatherData.temperature}°F</p>
       </div>
       <div className="bg-white shadow p-4 rounded">
-        <h3 className="text-lg font-semibold">Humidity 💧</h3>
+        <h3 className="text-lg font-semibold">
+          {" "}
+          <span>
+            Humidity <FontAwesomeIcon icon={faDroplet} />
+          </span>
+        </h3>
         <p>{weatherData.humidity}%</p>
       </div>
     </div>
