@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 @theme {
   --color-cream: #f7e1d7;
@@ -39,4 +40,24 @@
 
 abbr {
   text-decoration: none;
+}
+
+p,
+h1,
+h2,
+form,
+span,
+strong,
+.react-calendar {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #383838;
+}
+
+strong,
+h2 {
+  font-weight: 700;
+  text-transform: uppercase;
 }
