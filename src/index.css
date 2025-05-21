@@ -32,6 +32,7 @@
 .react-calendar__navigation__label {
   flex-grow: 2;
   text-align: center;
+  font-weight: 700;
 }
 
 .react-calendar__navigation__arrow .react-calendar__navigation__prev2-button {
@@ -42,13 +43,7 @@ abbr {
   text-decoration: none;
 }
 
-p,
-h1,
-h2,
-form,
-span,
-strong,
-.react-calendar {
+body {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 300;

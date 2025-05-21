@@ -12,3 +12,9 @@
 - **Edit and Delete Plants**: Update plant details or remove plants from the list.
 - **Wishlist**: Maintain a wishlist of plants you want to add to your collection.
 - **Local Storage**: Persist plant and wishlist data across browser sessions.
+
+---
+
+## Screenshot
+
+![Planty Screenshot](./assets/ss.png)

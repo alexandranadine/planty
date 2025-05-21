@@ -50,9 +50,9 @@ export default function AddPlantForm({ onAdd }) {
           onChange={(e) => setNotes(e.target.value)}
         />
         <div className="flex items-center gap-2">
-          <span>Water this plant every</span>
+          <span>Water this plant in</span>
           <input
-            className="border p-1 rounded w-16 text-center"
+            className="border p-1 rounded w-12 text-center"
             type="number"
             min="1"
             value={frequency}

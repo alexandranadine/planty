@@ -141,7 +141,7 @@ export default function WateringList({ plants, onWater, onEdit, onDelete }) {
 
           {/* Input for watering frequency */}
           <span>
-            Water this plant every&nbsp;
+            Water this plant in&nbsp;
             <input
               className="border rounded p-1 w-16 text-center"
               type="number"
