@@ -57,7 +57,7 @@ export default function EnvironmentCards() {
 
   return (
     <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="bg-white shadow p-4 rounded">
+      <div className="bg-cream shadow p-4 rounded">
         <h3 className="text-lg font-semibold">
           <span>
             Light <FontAwesomeIcon icon={faSun} />
@@ -65,7 +65,7 @@ export default function EnvironmentCards() {
         </h3>
         <p>{weatherData.light}</p>
       </div>
-      <div className="bg-white shadow p-4 rounded">
+      <div className="bg-greygreen shadow p-4 rounded">
         <h3 className="text-lg font-semibold">
           <span>
             Temp <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
@@ -73,7 +73,7 @@ export default function EnvironmentCards() {
         </h3>
         <p>{weatherData.temperature}°F</p>
       </div>
-      <div className="bg-white shadow p-4 rounded">
+      <div className="bg-moss shadow p-4 rounded">
         <h3 className="text-lg font-semibold">
           {" "}
           <span>

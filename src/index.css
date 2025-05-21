@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-cream: #f7e1d7;
+  --color-greygreen: #dedbd2;
+  --color-moss: #b0c4b1;
+  --color-rose: #edafb8;
+  --color-forest: #4a5759;
+}
+
 .react-calendar__tile.highlight {
-  background-color: #a3e635;
+  background-color: #4a5759;
   color: white;
   border-radius: 20px;
 }

@@ -62,7 +62,7 @@ export default function AddPlantForm({ onAdd }) {
           <span>days.</span>
         </div>
         <button
-          className="self-start bg-green-600 text-white px-4 py-2 rounded"
+          className="self-start bg-forest text-white px-4 py-2 rounded"
           type="submit"
         >
           Add Plant

@@ -82,13 +82,13 @@ export default function WateringList({ plants, onWater, onEdit, onDelete }) {
                           </button>
                         )}
                         <button
-                          className="bg-yellow-500 text-white px-2 py-1 rounded"
+                          className="bg-moss text-white px-2 py-1 rounded"
                           onClick={() => startEditing(plant)}
                         >
                           <PencilIcon className="w-5 h-5" />
                         </button>
                         <button
-                          className="bg-red-500 text-white px-2 py-1 rounded"
+                          className="bg-rose text-white px-2 py-1 rounded"
                           onClick={() => onDelete(plant.id)}
                         >
                           <TrashIcon className="w-5 h-5" />
