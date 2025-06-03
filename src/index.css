@@ -1,5 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Leckerli+One&display=swap");
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 @theme {
   --color-cream: #f7e1d7;
@@ -7,6 +7,12 @@
   --color-moss: #b0c4b1;
   --color-rose: #edafb8;
   --color-forest: #4a5759;
+}
+
+h1 {
+  font-family: "Leckerli One", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .react-calendar__tile.highlight {
